@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Risol Mayo Special homemade dari Risoles UTM. Pesan dengan harga spesial untuk pesanan banyak.">
+    <title>Risol Mayo Special | Risoles UTM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ink: #2d2926;
+            --muted: #766c65;
+            --cream: #f8f2e9;
+            --paper: #fffdf9;
+            --terracotta: #b95135;
+            --terracotta-dark: #873b29;
+            --sage: #71836c;
+            --line: #eadfd1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--cream);
+            font-family: "DM Sans", sans-serif;
+        }
+
+        body>header {
+            position: relative;
+            min-height: 510px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px 20px;
+            background: linear-gradient(90deg, rgba(47, 28, 20, .82), rgba(47, 28, 20, .2)), url("img/smoked_beef_mayo.jpg") center/cover;
+        }
+
+        body>header>div {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        body>header>div>div {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 22px;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--terracotta);
+            font-size: 24px;
+        }
+
+        body>header h1 {
+            max-width: 650px;
+            margin: 0;
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 8vw, 84px);
+            line-height: .98;
+            letter-spacing: -.04em;
+        }
+
+        body>header p {
+            max-width: 430px;
+            margin-top: 22px;
+            color: #f2dfd4;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .social-links a {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color .2s, transform .2s;
+        }
+
+        .social-links a i {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, .65);
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+        .social-links a:hover {
+            color: #f2dfd4;
+        }
+
+        .social-links a:hover i {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, .18);
+        }
+
+        body>header::after {
+            position: absolute;
+            right: 7%;
+            bottom: 28px;
+            color: rgba(255, 255, 255, .68);
+            content: "Risoles UTM · Homemade with care";
+            font-size: 11px;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        body>section,
+        body>main {
+            width: min(1100px, calc(100% - 40px));
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        body>section:first-of-type {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 46px;
+            align-items: start;
+            margin-top: 74px;
+            padding: 0 0 25px;
+        }
+
+        body>section:first-of-type>div {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        body>section:first-of-type h2,
+        body>main h2 {
+            margin: 0 0 16px;
+            color: var(--ink);
+            font-family: "Playfair Display", serif;
+            font-size: 36px;
+            line-height: 1.15;
+        }
+
+        body>section:first-of-type h2::before {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--terracotta);
+            content: "TENTANG DAPUR KAMI";
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            letter-spacing: .16em;
+        }
+
+        body>section:first-of-type p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        body>main {
+            padding-top: 30px;
+        }
+
+        body>main>h2 {
+            margin-bottom: 26px;
+        }
+
+        body>main>h2 span {
+            display: none;
+        }
+
+        body>main>h2::before {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--terracotta);
+            content: "MENU TERSEDIA";
+            font-family: "DM Sans", sans-serif;
+            font-size: 11px;
+            letter-spacing: .16em;
+        }
+
+        .product-card {
+            display: grid;
+            grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--paper);
+        }
+
+        .product-card>img {
+            width: 100%;
+            height: 100%;
+            min-height: 440px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 28px;
+        }
+
+        .product-content h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .product-description {
+            margin: 10px 0 24px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pricing-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .pricing-heading,
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+        .pricing-heading {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .price-row strong {
+            color: var(--terracotta-dark);
+            white-space: nowrap;
+        }
+
+        .price-note {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .order-controls {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 10px 14px;
+            margin-top: 22px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+        }
+
+        .order-controls label {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .order-controls input {
+            width: 100px;
+            min-height: 42px;
+            padding: 8px 10px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            color: var(--ink);
+            background: #fff;
+            font: inherit;
+        }
+
+        .order-summary {
+            grid-column: 1 / -1;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .order-total {
+            color: var(--terracotta-dark);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .order-button {
+            grid-column: 1 / -1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 12px 18px;
+            border-radius: 6px;
+            color: #fff;
+            background: var(--sage);
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color .2s;
+        }
+
+        .order-button:hover {
+            background: #596b55;
+        }
+
+        .order-button[aria-disabled="true"] {
+            opacity: .55;
+            pointer-events: none;
+        }
+
+        body>section:last-of-type a {
+            text-decoration: none;
+        }
+
+        body>section:last-of-type>div>div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        body>section:last-of-type>div>div a {
+            min-height: 46px;
+            padding: 14px 21px;
+            border-radius: 999px;
+            font-size: 13px;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        body>section:last-of-type>div>div a i {
+            font-size: 16px;
+        }
+
+        body>section:last-of-type {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 74px;
+            padding: 32px 38px;
+            border-radius: 20px;
+            background: var(--terracotta-dark);
+        }
+
+        body>section:last-of-type h3 {
+            margin: 0 0 7px;
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+        }
+
+        body>section:last-of-type p {
+            margin: 0 0 18px;
+            color: #e9cfc5;
+        }
+
+        body>section:last-of-type a {
+            background: #fffaf2;
+            color: var(--terracotta-dark);
+        }
+
+        footer {
+            padding: 28px 0;
+            color: var(--muted);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 760px) {
+            body>header {
+                min-height: 0;
+                padding: 44px 20px 64px;
+                background: linear-gradient(rgba(47, 28, 20, .74), rgba(47, 28, 20, .74)), url("img/smoked_beef_mayo.jpg") center/cover;
+            }
+
+            body>header>div {
+                width: min(100%, 420px);
+                text-align: center;
+            }
+
+            .social-links {
+                width: 100%;
+                max-width: 420px;
+                align-items: stretch;
+                gap: 12px;
+                margin: 26px auto 0;
+            }
+
+            .social-links a {
+                position: relative;
+                width: 100%;
+                min-height: 56px;
+                justify-content: center;
+                padding: 6px 52px;
+                border: 1px solid rgba(255, 255, 255, .8);
+                border-radius: 8px;
+                color: var(--ink);
+                background: var(--paper);
+                font-weight: 700;
+            }
+
+            .social-links a i {
+                position: absolute;
+                left: 12px;
+                width: 34px;
+                height: 34px;
+                border: 0;
+                color: var(--terracotta-dark);
+                font-size: 19px;
+            }
+
+            .social-links a:hover {
+                color: var(--terracotta-dark);
+                background: #fff;
+            }
+
+            body>header h1 {
+                max-width: none;
+                font-size: 38px;
+            }
+
+            body>header p {
+                max-width: none;
+                margin: 12px auto 0;
+            }
+
+            body>header>div>div {
+                width: 72px;
+                height: 72px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 16px;
+                font-size: 30px;
+            }
+
+            body>header::after {
+                right: 50%;
+                bottom: 20px;
+                transform: translateX(50%);
+                white-space: nowrap;
+            }
+
+            body>section,
+            body>main {
+                width: min(100% - 28px, 560px);
+            }
+
+            body>section:first-of-type {
+                display: block;
+                margin-top: 54px;
+            }
+
+            body>section:first-of-type>div+div {
+                margin-top: 22px;
+            }
+
+            .product-card {
+                grid-template-columns: 1fr;
+            }
+
+            body>section:last-of-type {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: 54px;
+                padding: 27px 24px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .product-card>img {
+                height: 230px;
+                min-height: 0;
+            }
+
+            .product-content {
+                padding: 20px;
+            }
+
+            .product-content h3 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50 text-slate-800 font-sans pb-12">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-amber-500 text-white py-10 px-4 text-center shadow-md">
+        <div class="max-w-xl mx-auto">
+            <div
+                class="w-24 h-24 bg-white rounded-full mx-auto mb-3 flex items-center justify-center text-amber-500 font-bold text-3xl shadow">
+                🥐
+            </div>
+            <h1 class="text-3xl font-extrabold tracking-wide">Risoles UTM</h1>
+            <p class="text-amber-100 text-sm mt-1">Guriih, Cruncy & Lumer di Setiap Gigitan!</p>
+            <nav class="social-links" aria-label="Media sosial dan lokasi">
+                <a href="https://www.tiktok.com/@kawan_rahman?_r=1&amp;_t=ZS-9AZUqrWU7ts" target="_blank"
+                    rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <span>@kawan_rahman</span>
+                </a>
+                <a href="https://wa.me/6285812748662" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span>085812748662</span>
+                </a>
+                <a href="https://maps.app.goo.gl/h6GZHeTwvza7qTFM6" target="_blank" rel="noopener noreferrer"
+                    aria-label="Lokasi di Google Maps">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Lihat alamat di Google Maps</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Penjual -->
+    <section class="max-w-xl mx-auto my-6 px-4">
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-amber-100">
+            <h2 class="text-lg font-bold text-amber-800 mb-2 border-b pb-1">Tentang Kami</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+                Selamat datang di katalog online Risoles UTM! Kami menyajikan risoles homemade dengan
+                bahan-bahan berkualitas tinggi, selalu hangat, dan dibuat tanpa bahan pengawet. Cocok untuk cemilan
+                keluarga atau acara spesial.
+            </p>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <main class="max-w-xl mx-auto px-4">
+        <h2>Risol Mayo Special</h2>
+
+        <article class="product-card">
+            <img src="img/smoked_beef_mayo.jpg" alt="Risol Mayo Special homemade">
+            <div class="product-content">
+                <h3>Risol Mayo Special</h3>
+                <p class="product-description">Risol mayo homemade dengan rasa gurih, cocok untuk camilan maupun acara.
+                </p>
+
+                <div class="pricing-list" aria-label="Harga per risol berdasarkan jumlah pesanan">
+                    <div class="pricing-heading"><span>Jumlah pesanan</span><span>Harga per pcs</span></div>
+                    <div class="price-row"><span>1-20 pcs</span><strong>Rp3.000</strong></div>
+                    <div class="price-row"><span>21-50 pcs</span><strong>Rp2.700</strong></div>
+                    <div class="price-row"><span>51 pcs ke atas</span><strong>Rp2.500</strong></div>
+                </div>
+                <p class="price-note">Harga per pcs mengikuti jumlah total dalam satu pesanan.</p>
+
+                <div class="order-controls">
+                    <label for="order-quantity">Jumlah pesanan (pcs)</label>
+                    <input id="order-quantity" type="number" min="1" step="1" value="1" inputmode="numeric">
+                    <p class="order-summary" id="unit-price">Harga: Rp3.000 / pcs</p>
+                    <p class="order-summary order-total" id="order-total" aria-live="polite">Total: Rp3.000</p>
+                    <a class="order-button" id="order-link" href="https://wa.me/6285812748662" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Kontak & Alamat -->
+    <section class="max-w-xl mx-auto my-6 px-4">
+        <div class="bg-amber-500 text-white p-5 rounded-2xl shadow-md text-center">
+            <h3 class="font-bold text-lg mb-1">Pesan Langsung / Info Lokasi</h3>
+            <p class="text-xs text-amber-100 mb-4">Menerima pesanan untuk snack box, acara pesta, & harian.</p>
+
+            <div class="flex justify-center gap-3">
+                <a href="https://wa.me/6285812748662" target="_blank" rel="noopener noreferrer"
+                    class="bg-white text-emerald-600 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 shadow hover:bg-emerald-50 transition">
+                    <i class="fab fa-whatsapp text-lg"></i> WhatsApp Us
+                </a>
+                <a href="https://maps.app.goo.gl/h6GZHeTwvza7qTFM6" target="_blank"
+                    class="bg-amber-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 shadow hover:bg-amber-700 transition">
+                    <i class="fas fa-map-marker-alt"></i> Lihat Lokasi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-400 text-xs py-4">
+        <p>© 2026 Risoles UTM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const quantityInput = document.getElementById("order-quantity");
+        const unitPriceLabel = document.getElementById("unit-price");
+        const orderTotalLabel = document.getElementById("order-total");
+        const orderLink = document.getElementById("order-link");
+        const rupiahFormatter = new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        });
+
+        function updateOrderSummary() {
+            const quantity = Number.parseInt(quantityInput.value, 10);
+
+            if (!Number.isInteger(quantity) || quantity < 1) {
+                unitPriceLabel.textContent = "Harga: -";
+                orderTotalLabel.textContent = "Masukkan jumlah minimal 1 pcs.";
+                orderLink.removeAttribute("href");
+                orderLink.setAttribute("aria-disabled", "true");
+                orderLink.setAttribute("tabindex", "-1");
+                return;
+            }
+
+            const pricePerItem = quantity >= 50 ? 2500 : quantity >= 20 ? 2700 : 3000;
+            const totalPrice = quantity * pricePerItem;
+            const formattedUnitPrice = rupiahFormatter.format(pricePerItem);
+            const formattedTotalPrice = rupiahFormatter.format(totalPrice);
+            const message = `Halo, saya mau pesan Risol Mayo Special sebanyak ${quantity} pcs. Harga ${formattedUnitPrice}/pcs, total ${formattedTotalPrice}.`;
+
+            unitPriceLabel.textContent = `Harga: ${formattedUnitPrice} / pcs`;
+            orderTotalLabel.textContent = `Total: ${formattedTotalPrice}`;
+            orderLink.href = `https://wa.me/6285812748662?text=${encodeURIComponent(message)}`;
+            orderLink.removeAttribute("aria-disabled");
+            orderLink.removeAttribute("tabindex");
+        }
+
+        quantityInput.addEventListener("input", updateOrderSummary);
+        updateOrderSummary();
+    </script>
+</body>
+
+</html>
